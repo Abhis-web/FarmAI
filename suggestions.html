@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmAI - Suggestions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>FarmAI</h1>
+        <div style="display: flex; align-items: center;">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="farmwiki.html">Farmwiki</a></li>
+                <li><a href="suggestions.html" class="active">Suggestions</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="content-section" id="mainSuggestion">
+            <h2>Suggestions</h2>
+            <div id="inputBox">
+    
+                <label for="district" class="labels">District:</label>
+                <select name="district" id="states" class="options">
+    
+                    <option value="select" disabled selected value>Select</option>
+                    <option value="Angul">Angul</option>
+                    <option value="Bargarh">Bargarh</option>
+                    <option value="Bhadrak">Bhadrak</option>
+                    <option value="Balasore">Balasore</option>
+                    <option value="Balangir">Balangir</option>
+                    <option value="Boudh">Boudh</option>
+                    <option value="Cuttack">Cuttack</option>
+                    <option value="Debagarh">Debagarh</option>
+                    <option value="Dhenkanal">Dhenkanal</option>
+                    <option value="Gajapati">Gajapati</option>
+                    <option value="Ganjam">Ganjam</option>
+                    <option value="Jagatsinghpur">Jagatsinghpur</option>
+                    <option value="Jajpur">Jajpur</option>
+                    <option value="Jharsuguda">Jharsuguda</option>
+                    <option value="Kalahandi">Kalahandi</option>
+                    <option value="Kandhamal">Kandhamal</option>
+                    <option value="Kendrapara">Kendrapara</option>
+                    <option value="Keonjhar">Keonjhar</option>
+                    <option value="Khordha">Khordha</option>
+                    <option value="Koraput">Koraput</option>
+                    <option value="Malkangiri">Malkangiri</option>
+                    <option value="Mayurbhanj">Mayurbhanj</option>
+                    <option value="Nuapada">Nuapada</option>
+                    <option value="Nabarangpur">Nabarangpur</option>
+                    <option value="Nayagarh">Nayagarh</option>
+                    <option value="Puri">Puri</option>
+                    <option value="Rayagada">Rayagada</option>
+                    <option value="Sambalpur">Sambalpur</option>
+                    <option value="Subarnapur">Subarnapur</option>
+                    <option value="Sundergarh">Sundergarh</option>
+                    
+                </select>
+    
+                <label for="soil" class="labels">Soil type:</label>
+                <select name="soil" id="soils" class="options">
+    
+                    <option value="select" disabled selected value>Select</option>
+                    <option value="Alluvial Soil">Alluvial Soil</option>
+                    <option value="Black Cotton Soil">Black Cotton Soil</option>
+                    <option value="Red & Yellow Soil">Red & Yellow Soil</option>
+                    <option value="Laterite Soil">Laterite Soil</option>
+                    <option value="Mountainous or Forest Soil">Mountainous or Forest Soil</option>
+                    <option value="Arid or Desert Soil">Arid or Desert Soil</option>
+                    <option value="Saline and Alkaline Soil">Saline and Alkaline Soil</option>
+                    <option value="Peaty and Marshy Soil">Peaty and Marshy Soil</option>
+    
+                </select>
+    
+                <button onclick="typeSearch()" id="submitBtn">Analyze</button>
+                 
+            </div>
+    
+            
+    
+            <div id="dashboard">
+    
+                <div id="suggestion">
+                    <p id="heading">Crop Suggestion:</p>
+                    <hr>
+    
+                    <p id="Cereal Crops" class="descHead"></p>
+                    <p id="sugCereal Crops" class="descPara"></p>
+    
+                    <p id="Pulses" class="descHead"></p>
+                    <p id="sugPulses" class="descPara"></p>
+    
+                    <p id="Oil Seeds" class="descHead"></p>
+                    <p id="sugOil Seeds" class="descPara"></p>
+    
+                    <p id="Plantation Crops" class="descHead"></p>
+                    <p id="sugPlantation Crops" class="descPara"></p>
+    
+                    <p id="Sugar & Fiber Crops" class="descHead"></p>
+                    <p id="sugSugar & Fiber Crops" class="descPara"></p>
+    
+                    <p id="Fodder Crops" class="descHead"></p>
+                    <p id="sugFodder Crops" class="descPara"></p>
+    
+                    <p id="Fruits & Vegetables" class="descHead"></p>
+                    <p id="sugFruits & Vegetables" class="descPara"></p>
+    
+                </div>
+    
+                <div id="map">
+                    <img src="OdishaMap/Odisha.png" type="image/png" width="500px" id="districtMap">
+                </div>
+    
+            </div>
+    
+            <div id="chatbot-container" class="collapsed">
+                <div class="chat-toggle" onclick="toggleChat()">
+                    <span class="chat-icon">🌱</span>
+                    <div class="notification-dot"></div>
+                    <span class="close-icon">✕</span>
+                </div>
+                <div class="chat-box">
+                    <div class="chat-header">
+                        <h3><span class="header-icon">🌱</span> FarmAI Assistant</h3>
+                        <button class="minimize-btn" onclick="toggleChat()">−</button>
+                    </div>
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot">
+                            Hello! I'm your FarmAI assistant. How can I help you with farming today?
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="user-input" placeholder="Type your farming question...">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+
+    
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About FarmAI</h3>
+                <p>FarmAI is dedicated to revolutionizing agriculture through smart suggestions. We provide farmers with cutting-edge tools and knowledge to optimize their farming practices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="farmwiki.html">Farmwiki</a></li>
+                    <li><a href="suggestions.html">Suggestions</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <a href="https://github.com/s8tn2546/Hackathon" target="_blank"><div class="social-links">
+                    <img src="github.png" width="35px" height="35px" target="__blank">
+                    <h4 id="gitHub">Github</h4>
+                </div></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FarmAI. All rights reserved.</p>
+            <p>Made with ❤️ for farmers</p>
+        </div>
+    </footer>
+
+    <script src="function.js"></script>
+    <script src="https://ai.google.dev/api/js"></script>
+
+</body>
+</html> 

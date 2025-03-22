@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmAI - Farmwiki</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>FarmAI</h1>
+        <div style="display: flex; align-items: center;">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="farmwiki.html" class="active">Farmwiki</a></li>
+                <li><a href="suggestions.html">Suggestions</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="content-section">
+        <h2>Farmwiki</h2>
+        <div class="wiki-container">
+            <div class="wiki-row">
+                <a href="wiki/soil-management.html" class="box">
+                    <img src="Soil and land management.jpg" alt="Soil and Land Management">
+                    <div class="box-overlay"></div>
+                    <h3>Soil and Land Management</h3>
+                </a>
+                <a href="wiki/crop-cultivation.html" class="box">
+                    <img src="Crop cultivation and best practices.jpg" alt="Crop Cultivation and Best Practices">
+                    <div class="box-overlay"></div>
+                    <h3>Crop Cultivation and Best Practices</h3>
+                </a>
+                <a href="wiki/water-management.html" class="box">
+                    <img src="Water management and irrigation.jpg" alt="Water Management and Irrigation">
+                    <div class="box-overlay"></div>
+                    <h3>Water Management and Irrigation</h3>
+                </a>
+                <a href="wiki/farming-technology.html" class="box">
+                    <img src="Use of technology in farming.jpg" alt="Use of Technology in Farming">
+                    <div class="box-overlay"></div>
+                    <h3>Use of Technology in Farming</h3>
+                </a>
+            </div>
+            <div class="wiki-row">
+                <a href="wiki/financial-literacy.html" class="box">
+                    <img src="Empowering farmers through financial literacy and Market access.jpg" alt="Empowering Farmers through Financial Literacy and Market Access">
+                    <div class="box-overlay"></div>
+                    <h3>Empowering Farmers through Financial Literacy and Market Access</h3>
+                </a>
+                <a href="wiki/climate-sustainability.html" class="box">
+                    <img src="Climate change and sustainability in agriculture.jpg" alt="Climate Change and Sustainability in Agriculture">
+                    <div class="box-overlay"></div>
+                    <h3>Climate Change and Sustainability in Agriculture</h3>
+                </a>
+                <a href="wiki/farm-safety.html" class="box">
+                    <img src="Farm safety and health.jpg" alt="Farm Safety and Health">
+                    <div class="box-overlay"></div>
+                    <h3>Farm Safety and Health</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Intersection Observer for box animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.box').forEach((box) => {
+            observer.observe(box);
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About FarmAI</h3>
+                <p>FarmAI is dedicated to revolutionizing agriculture through smart suggestions. We provide farmers with cutting-edge tools and knowledge to optimize their farming practices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="farmwiki.html">Farmwiki</a></li>
+                    <li><a href="suggestions.html">Suggestions</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <a href="https://github.com/s8tn2546/Hackathon" target="_blank"><div class="social-links">
+                    <img src="github.png" width="35px" height="35px" target="__blank">
+                    <h4 id="gitHub">Github</h4>
+                </div></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FarmAI. All rights reserved.</p>
+            <p>Made with ❤️ for farmers</p>
+        </div>
+    </footer>
+</body>
+</html>     

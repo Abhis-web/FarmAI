@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmAI - for the Farmers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>FarmAI</h1>
+        <div style="display: flex; align-items: center;">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="farmwiki.html">Farmwiki</a></li>
+                <li><a href="suggestions.html">Suggestions</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Where Agriculture Meets Innovation</h1>
+        <p>make your farm more productive and efficient</p>
+        <a href="#what-we-provide" class="cta-button">Details</a>
+    </section>
+
+    <section class="content-section" id="what-we-provide">
+        <h2>What We Provide</h2>
+        <div class="box-container">
+            <div class="box-row">
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-icon">🌱</div>
+                        <h3>Crop Suggestion</h3>
+                        <p>Best crop suggestion for your soil type</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-icon">📚</div>
+                        <h3>Study Material</h3>
+                        <p>High quality brief study material to get you educated about your work</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-icon">🔊</div>
+                        <h3>Smart Educator</h3>
+                        <p>Text to speech feature to make your study sessions interactive</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-icon">✅</div>
+                        <h3>Query Solver</h3>
+                        <p>Interative chat bot to help solve your problems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="intro-text">
+            <p>Our platform provides best crop suggestions for your soil. From crop suggestion to study materials, we help farmers to get knowledge and help them make suitable decisions to maximize their productivity and sustainability.</p>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About FarmAI</h3>
+                <p>FarmAI is dedicated to revolutionizing agriculture through smart suggestions. We provide farmers with cutting-edge tools and knowledge to optimize their farming practices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="farmwiki.html">Farmwiki</a></li>
+                    <li><a href="suggestions.html">Suggestions</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <a href="https://github.com/s8tn2546/Hackathon" target="_blank"><div class="social-links">
+                    <img src="github.png" width="35px" height="35px" target="__blank">
+                    <h4 id="gitHub">Github</h4>
+                </div></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FarmAI. All rights reserved.</p>
+            <p>Made with ❤️ for farmers</p>
+        </div>
+    </footer>
+</body>
+</html>

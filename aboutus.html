@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmAI - About Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>FarmAI</h1>
+        <div style="display: flex; align-items: center;">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="farmwiki.html">Farmwiki</a></li>
+                <li><a href="suggestions.html">Suggestions</a></li>
+                <li><a href="aboutus.html" class="active">About Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="content-section">
+        <h2>About Us</h2>
+        <div class="intro-text">
+            <p>Welcome to FarmAI, where we're revolutionizing agriculture. Our mission is to empower farmers with cutting-edge technology and knowledge to optimize their farming practices. We believe that every farmer deserves access to the latest agricultural innovations, and we're here to make that possible.</p>
+        </div>
+
+        <div class="roadmap-section">
+            <h3>Our Roadmap</h3>
+            <div class="roadmap-container">
+                <div class="roadmap-content">
+                    <h4>Phase 1: Foundation</h4>
+                    <p>Development of our core crop suggestion system based on soil type and location. This phase focuses on building accurate models for crop recommendations and establishing our basic infrastructure.</p>
+                </div>
+                <div class="roadmap-content">
+                    <h4>Phase 2: Enhancement</h4>
+                    <p>Integration of study materials with text to speech features and predictive analytics to provide more accurate farming recommendations.</p>
+                </div>
+                <div class="roadmap-content">
+                    <h4>Phase 3: Accessibility</h4>
+                    <p>Mobile app development for on-the-go access to our farming tools and recommendations. This phase focuses on making our technology easily accessible to farmers everywhere.</p>
+                </div>
+                <div class="roadmap-content">
+                    <h4>Phase 4: Feedback</h4>
+                    <p>Development of chat bot to accept for feedback and queries from the user to help them with any problems they might face and make their experience even better.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mission-box">
+            <h3>Our Mission</h3>
+            <p>To provide farmers with our tools and insights that help them make data-driven decisions, increase crop yields, and contribute to sustainable agriculture. We're committed to bridging the gap between traditional farming and modern technology, ensuring that every farmer can benefit from the power of technology.</p>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Intersection Observer for roadmap animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.roadmap-content').forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About FarmAI</h3>
+                <p>FarmAI is dedicated to revolutionizing agriculture through smart suggestions. We provide farmers with cutting-edge tools and knowledge to optimize their farming practices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="farmwiki.html">Farmwiki</a></li>
+                    <li><a href="suggestions.html">Suggestions</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <a href="https://github.com/s8tn2546/Hackathon" target="_blank"><div class="social-links">
+                    <img src="github.png" width="35px" height="35px" target="__blank">
+                    <h4 id="gitHub">Github</h4>
+                </div></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FarmAI. All rights reserved.</p>
+            <p>Made with ❤️ for farmers</p>
+        </div>
+    </footer>
+</body>
+</html> 
